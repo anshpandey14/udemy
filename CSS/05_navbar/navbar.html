@@ -20,16 +20,49 @@
         margin-bottom: 10px;
       }
       .nav1 {
-        background-color: #818384;
+        background-color: #ffffff;
         /* border: 2px solid red; */
         padding: 10px;
       }
-      .nav1 ul{
+      .nav1 ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         display: flex;
         justify-content: space-around;
+      }
+      .nav1 li {
+        display: inline;
+      }
+      .nav1 a {
+        text-decoration: none;
+        color: rgb(7, 7, 7);
+        /* background-color: rgb(251, 121, 40); */
+        padding: 5px 15px;
+        position: relative;
+      }
+
+      .nav1 a::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: #798ceb;
+        transform: scaleX(0);
+        transition: 0.3s ease-in-out;
+      }
+      .nav1 a:hover::after {
+        transform: scale(1);
+      }
+      .nav1 .login-btn {
+        background-color: rgb(8, 99, 203);
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
       }
     </style>
   </head>
