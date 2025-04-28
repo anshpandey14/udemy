@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card 2</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+        font-family: "Noto Sans", sans-serif;
+        height: 100%;
+      }
+      .container {
+        background: #eb7563;
+        background: linear-gradient(
+          90deg,
+          rgba(235, 117, 99, 1) 10%,
+          rgba(232, 163, 79, 1) 50%,
+          rgba(227, 130, 61, 1) 100%,
+          rgba(237, 221, 83, 1) 100%
+        );
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        max-width: 300px;
+        padding: 10px;
+        /* margin: 20px; */
+        border-radius: 12px;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+      }
+      img {
+        height: 200px;
+        width: 250px;
+        padding: 10px;
+        border-radius: 10px;
+        object-fit: cover;
+        /* margin: 10px; */
+        /* display: flex; */
+        /* justify-content: center;
+        align-items: center; */
+      }
+      h2 {
+        color: #fb2605;
+        margin-bottom: 10px;
+      }
+      p {
+        color: #fe0000;
+        margin-bottom: 15px;
+      }
+      .btn {
+        display: flex;
+        justify-content: space-around;
+      }
+      button {
+        padding: 7px 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        color: black;
+        font-weight: bold;
+        background-color: rgb(218, 81, 124);
+      }
+      button:hover {
+        background-color: rgb(19, 89, 194);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <img
+          src="free-photo-of-stylish-athletic-shoes-on-orange-background.jpeg"
+          alt="shoe-img"
+        />
+        <h2>Stylish, Premium Shoes</h2>
+        <p>$1,699 only</p>
+        <div class="btn">
+          <button>BUY NOW</button>
+          <button>ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

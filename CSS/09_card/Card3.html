@@ -4,65 +4,66 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card 1</title>
+    <title>Card 3</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
       body,
       html {
-        margin: 0;
         padding: 0;
+        margin: 0;
         font-family: "Noto Sans", sans-serif;
         height: 100%;
       }
       .container {
-        background: #2a7b9b;
+        background: #5415e8;
         background: linear-gradient(
-          90deg,
-          rgba(42, 123, 155, 1) 0%,
-          rgba(87, 199, 133, 1) 50%,
-          rgba(61, 227, 105, 1) 55%,
-          rgba(237, 221, 83, 1) 100%
+          270deg,
+          rgba(84, 21, 232, 1) 1%,
+          rgba(207, 38, 222, 1) 51%,
+          rgba(22, 191, 224, 1) 93%
         );
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
       }
       .card {
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
         border-radius: 10px;
-        padding: 10px;
-        /* margin: 10px; */
-        max-width: 300px;
+        text-align: center;
+        background-color: #d0c1f3;
+        max-width: 350px;
+        /* display: flex;
+        flex-direction: column; */
+        /* margin-bottom: 10px; */
       }
-      .card img {
-        margin: 10px;
+      img {
         border-radius: 10px;
         object-fit: cover;
       }
       h2 {
-        color: rgb(63, 189, 38);
+        color: #3503a8;
         margin-bottom: 10px;
       }
       p {
-        color: rgb(44, 161, 38);
-        margin-bottom: 20px;
+        color: #3503a8;
+        /* margin-bottom: 10px; */
       }
-      .button {
+      .btn {
         display: flex;
         justify-content: space-around;
         margin-bottom: 10px;
       }
-      .btn1 {
-        padding: 10px;
-        background-color: rgb(33, 178, 110);
+      button {
+        padding: 10px 10px;
+        border-radius: 5px;
         border: none;
         cursor: pointer;
-        border-radius: 10px;
+        background-color: rgb(11, 126, 220);
+        font-weight: bold;
       }
-      .btn1:hover {
-        background-color: rgb(9, 120, 50);
+      button:hover {
+        background-color: rgb(14, 96, 163);
       }
     </style>
   </head>
@@ -70,16 +71,16 @@
     <div class="container">
       <div class="card">
         <img
-          src="pexels-photo-1456706.jpeg"
-          alt="shoe-img"
-          height="200px"
+          src="pexels-photo-12730141.webp"
+          alt="shoe img"
+          height="250px"
           width="250px"
         />
-        <h2>FAST IS FASTER</h2>
-        <p>COMING SOON</p>
-        <div class="button">
-          <button class="btn1">BUY NOW</button>
-          <button class="btn1">ADD TO CART</button>
+        <h2>STYLE SHOE</h2>
+        <p>$1,099</p>
+        <div class="btn">
+          <button>BUY NOW</button>
+          <button>ADD TO CART</button>
         </div>
       </div>
     </div>
