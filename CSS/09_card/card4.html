@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card 4</title>
+    <style>
+      h1,
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+      .container {
+        background: #616066;
+        background: linear-gradient(
+          270deg,
+          rgba(97, 96, 102, 1) 5%,
+          rgba(136, 137, 140, 1) 48%,
+          rgba(220, 215, 222, 1) 93%
+        );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .card {
+        text-align: center;
+        background-color: #616066;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 300px;
+      }
+      img {
+        border-radius: 10px;
+        height: 250px;
+        width: 250px;
+        /* object-fit: cover; */
+      }
+      h1,
+      p {
+        color: #1d1515;
+      }
+      p {
+        font-weight: bold;
+      }
+      .btn {
+        display: flex;
+        justify-content: space-around;
+      }
+      button {
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: rgb(188, 182, 182);
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: rgb(38, 35, 35);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img
+          src="free-photo-of-the-women-s-running-shoe-is-made-of-grey-and-white.jpeg"
+          alt="shoe photo"
+        />
+        <h1>Running Shoe</h1>
+        <p>$699</p>
+        <div class="btn">
+          <button>BUY NOW</button>
+          <button>ADD TO CART</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
