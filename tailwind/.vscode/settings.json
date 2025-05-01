@@ -6,6 +6,6 @@
   "tailwindCSS.files.exclude": ["**/output.css"],
   "editor.quickSuggestions": {
     "strings": true
-  },
-  "tailwindCSS.experimental.configFile": null
+  }
+  // "tailwindCSS.experimental.configFile": null
 }
