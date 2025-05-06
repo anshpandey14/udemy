@@ -15,4 +15,7 @@ greetFunction();
 const boundGreet = Person.greet.bind({ name: "john" });
 boundGreet();
 
+const Greet = Person.greet.bind(Person);
+Greet();
+
 // bind,call and apply

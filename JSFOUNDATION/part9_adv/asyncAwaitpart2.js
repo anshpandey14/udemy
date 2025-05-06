@@ -20,7 +20,7 @@ async function getBlogData() {
     // const blogData = await fetchPostData();
     // const CommentData = await fetchCommentData();
 
-    // promise all
+    // promise alla
     const [blogData, CommentData] = await Promise.all([
       fetchPostData(),
       fetchCommentData(),
