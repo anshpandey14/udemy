@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a1a1a;
+}
+
+.container {
+  background-color: rgb(15, 15, 15);
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+}
+
+h1 {
+  color: white;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+#todo-input {
+  background-color: rgb(20, 22, 21);
+  border: none;
+  color: white;
+  border-radius: 4px;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+#add-task-btn {
+  background-color: rgb(113, 26, 142);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+#todo-list {
+  border-radius: 4px;
+  list-style-type: none;
+  padding: 10px;
+  margin: 2px;
+}
+
+#todo-list:empty {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: rgb(26, 37, 37);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+li span {
+  color: white;
+  padding: 0 5px;
+}
+
+li.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+li button {
+  background-color: #d32f2f;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+li button:hover {
+  background-color: #b71c1c;
+}

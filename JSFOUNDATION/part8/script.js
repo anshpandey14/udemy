@@ -83,7 +83,7 @@ document
     // alert("submitted!")
     event.preventDefault();
     let feedbackLabel = document.querySelector(
-      "label[for='feedbackInput'"
+      "label[for]='feedbackInput'"
     ).textContent;
     let feedback = document.getElementById("feedbackInput").value;
     // console.log(feedback);
