@@ -79,3 +79,24 @@ h2 {
 .hidden {
   display: none;
 }
+
+.remove-btn {
+  background-color: #f81008;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #840804;
+}
+
+.cart-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
