@@ -11,10 +11,13 @@ const tweetSchema = new Schema(
     content: {
       type: String,
       required: true,
+      trim: true,
+      maxlength: 280,
     },
     owner: {
       type: Schema.Types.ObjectId,
       ref: "User",
+      required: true,
     },
   },
   {

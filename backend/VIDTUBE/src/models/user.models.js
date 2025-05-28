@@ -59,6 +59,12 @@ const userSchema = new Schema(
     refreshToken: {
       type: String,
     },
+    tweets: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Tweet",
+      },
+    ],
   },
   {
     timestamps: true, //separate object, this will create createdAt and updatedAT
@@ -69,7 +75,7 @@ const userSchema = new Schema(
 userSchema.pre("save", async function (next) {
   // fixed in registration video
   if (!this.isModified("password")) return next();
-  this.password = bcrypt.hash(this.password, 10);
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
