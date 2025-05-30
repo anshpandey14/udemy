@@ -32,6 +32,10 @@ const updateComment = asyncHandler(async (req, res) => {
   const { commentId } = req.params;
   const { content } = req.body;
 
+  if (!isValidObjectId(commentId)) {
+    throw new ApiError(400, "Invalid comment Id");
+  }
+
   const comment = await Comment.findById(commentId);
 
   if (!comment) {
@@ -42,7 +46,9 @@ const updateComment = asyncHandler(async (req, res) => {
     throw new ApiError(400, "You are not authorized to update the comment");
   }
 
-  comment.content = content || comment.content;
+  if (!content || content.trim() === "") {
+    throw new ApiError(400, "Comment text is required");
+  }
   await comment.save();
   return res
     .status(200)
@@ -51,6 +57,10 @@ const updateComment = asyncHandler(async (req, res) => {
 
 const deleteComment = asyncHandler(async (req, res) => {
   const { commentId } = req.params;
+
+  if (!isValidObjectId(commentId)) {
+    throw new ApiError(400, "Invalid comment Id");
+  }
 
   const comment = await Comment.findById(commentId);
 
