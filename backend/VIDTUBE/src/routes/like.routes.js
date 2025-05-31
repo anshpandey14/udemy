@@ -5,7 +5,7 @@ import {
   toggleCommentLike,
   toggleTweetLike,
   toggleVideoLike,
-} from "../controllers/like.controllers";
+} from "../controllers/like.controllers.js";
 
 const router = Router();
 router.use(verifyJWT);

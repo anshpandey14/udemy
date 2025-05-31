@@ -27,6 +27,7 @@ import likeRouter from "./routes/like.routes.js";
 import playlistRouter from "./routes/playlist.routes.js";
 import subscriptionRouter from "./routes/subscription.routes.js";
 import VideoRouter from "./routes/video.routes.js";
+import dashboardRouter from "./routes/dashboard.routes.js";
 import { errorHandler } from "./middlewares/error.middlewares.js";
 
 // routes
@@ -39,6 +40,7 @@ app.use("/api/v1/like", likeRouter);
 app.use("/api/v1/playlist", playlistRouter);
 app.use("/api/v1/subscription", subscriptionRouter);
 app.use("/api/v1/video", VideoRouter);
+app.use("/api/v1/dashboard", dashboardRouter);
 app.use(errorHandler);
 
 export { app };
