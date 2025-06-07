@@ -9,15 +9,19 @@ import mongoose, { Schema } from "mongoose";
 const subscriptionSchema = new Schema(
   {
     subscriber: {
-      type: Schema.Type.ObjectId, // one who is SUBSCRIBING
+      type: Schema.Types.ObjectId, // one who is SUBSCRIBING
       ref: "User",
+      required: true,
     },
     channel: {
-      type: Schema.Type.ObjectId, // one to whom `subscriber` is SBSCRIBING
+      type: Schema.Types.ObjectId, // one to whom `subscriber` is SBSCRIBING
       ref: "User",
+      required: true,
     },
   },
   { timestamps: true }
 );
+
+subscriptionSchema.index({ subscriber: 1, channel: 1 }, { unique: true });
 
 export const Subscription = mongoose.model("Subscription", subscriptionSchema);

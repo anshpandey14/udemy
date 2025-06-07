@@ -25,4 +25,19 @@ const storage = multer.diskStorage({
   },
 });
 
-export const upload = multer({ storage });
+// ✅ MIME type filtering
+const fileFilter = (req, file, cb) => {
+  // Accept only video and image files (thumbnails)
+  if (file.fieldname === "videoFile" && file.mimetype.startsWith("video/")) {
+    cb(null, true);
+  } else if (
+    file.fieldname === "thumbnail" &&
+    file.mimetype.startsWith("image/")
+  ) {
+    cb(null, true);
+  } else {
+    cb(new Error("Invalid file type, only video and images allowed"), false);
+  }
+};
+
+export const upload = multer({ storage, fileFilter });

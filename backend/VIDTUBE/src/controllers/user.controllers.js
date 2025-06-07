@@ -1,6 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.models.js";
+import mongoose from "mongoose";
 import {
   uploadOnCloudinary,
   deleteFromCloudinary,
@@ -133,7 +134,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
   //validate password
 
-  const isPasswordValid = await user.isPasswordCorrecr(password);
+  const isPasswordValid = await user.isPasswordCorrect(password);
 
   if (!isPasswordValid) {
     throw new ApiError(401, "Invalid credentials");
@@ -152,7 +153,8 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 
   const options = {
-    httpOnly: true.secure.process.env.NODE_ENV === "production",
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
   };
 
   return res
@@ -262,7 +264,7 @@ const changeCurrentPassword = asyncHandler(async (req, res) => {
 
   return res
     .status(200)
-    .json(new ApiResponse(200, {}, "Password cahnged successfully"));
+    .json(new ApiResponse(200, {}, "Password changed successfully"));
 });
 
 const getCurrentUser = asyncHandler(async (req, res) => {
@@ -289,7 +291,7 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
     {
       new: true,
     }
-  ).select("-password - refreshToken");
+  ).select("-password -refreshToken");
 
   return res
     .status(200)
@@ -426,7 +428,7 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
   return res
     .status(200)
     .json(
-      new ApiResponse(200, channel[0], "channel progile fetched successfully")
+      new ApiResponse(200, channel[0], "channel profile fetched successfully")
     );
 });
 
