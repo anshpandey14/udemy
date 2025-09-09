@@ -1,11 +1,11 @@
 {
   "tailwindCSS.includeLanguages": {
     "html": "html",
-    "javascript": "javascript"
+    "javascript": "javascript",
+    "css": "css"
   },
-  "tailwindCSS.files.exclude": ["**/output.css"],
+  "tailwindCSS.experimental.configFile": "./tailwind.config.js",
   "editor.quickSuggestions": {
     "strings": true
-  }
-  // "tailwindCSS.experimental.configFile": null
+}
 }

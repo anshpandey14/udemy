@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-
+import React from "react";
 import App from "./App.jsx";
 
 const reactElement = {
@@ -11,4 +11,27 @@ const reactElement = {
   children: "Click me to visit google",
 };
 
-createRoot(document.getElementById("root")).render(<App />);
+function MyApp() {
+  return (
+    <div>
+      <h1>Custom React app</h1>
+    </div>
+  );
+}
+
+const AnotherElement = (
+  <a href="http://google.com" target="_blank">
+    Visit Google
+  </a>
+);
+
+const areactElement = React.createElement(
+  "a",
+  {
+    href: "https://google.com",
+    target: "_blank",
+  },
+  "click to visit google"
+);
+
+createRoot(document.getElementById("root")).render(<App/>);
