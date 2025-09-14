@@ -5,6 +5,7 @@ import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
   return (
+    //making all aware about the context
     <UserContextProvider>
       <h1>React video for context API</h1>
       <Login />

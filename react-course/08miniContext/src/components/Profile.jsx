@@ -3,6 +3,7 @@ import { useContext } from "react";
 import UserContext from "../context/UserContext";
 
 function Profile() {
+  //using the context
   const { user } = useContext(UserContext);
 
   if (!user) {
