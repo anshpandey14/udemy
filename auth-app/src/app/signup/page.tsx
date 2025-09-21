@@ -71,7 +71,7 @@ export default function SignupPage() {
       <label htmlFor="password">password</label>
       <input
         className="p-2 border-white border-2 rounded-lg mb-4 focus:outline-none focus:border-gray-800 bg-gray-600"
-        type="text"
+        type="password"
         id="password"
         value={user.password}
         onChange={(e) => setUser({ ...user, password: e.target.value })}
