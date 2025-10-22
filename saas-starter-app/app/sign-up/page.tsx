@@ -18,7 +18,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Label } from "@/components/ui/label";
 
-function Signup() {
+export default function Signup() {
   const { isLoaded, signUp, setActive } = useSignUp();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
@@ -171,4 +171,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+
