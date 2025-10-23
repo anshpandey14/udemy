@@ -9,13 +9,11 @@ export async function POST() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  //capture payment
-
   try {
     const user = await prisma.user.findUnique({ where: { id: userId } });
 
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 401 });
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     const subscriptionEnds = new Date();
@@ -30,11 +28,11 @@ export async function POST() {
     });
 
     return NextResponse.json({
-      message: "Subscription successfully",
+      message: "Subscription successful",
       subscriptionEnds: updatedUser.subscriptionEnds,
     });
-  } catch (err) {
-    console.error("Error updating subscription", err);
+  } catch (error) {
+    console.error("Error updating subscription:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -52,31 +50,20 @@ export async function GET() {
   try {
     const user = await prisma.user.findUnique({
       where: { id: userId },
-      select: {
-        isSubscribed: true,
-        subscriptionEnds: true,
-      },
+      select: { isSubscribed: true, subscriptionEnds: true },
     });
 
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 401 });
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     const now = new Date();
-
     if (user.subscriptionEnds && user.subscriptionEnds < now) {
       await prisma.user.update({
         where: { id: userId },
-        data: {
-          isSubscribed: false,
-          subscriptionEnds: null,
-        },
+        data: { isSubscribed: false, subscriptionEnds: null },
       });
-
-      return NextResponse.json({
-        isSubscribed: false,
-        subscriptionEnds: null,
-      });
+      return NextResponse.json({ isSubscribed: false, subscriptionEnds: null });
     }
 
     return NextResponse.json({
