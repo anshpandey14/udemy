@@ -11,7 +11,7 @@ function Dashboard() {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [totalPages, setTotalPages] = useState(false);
-  const [currentPage, setCurrentPage] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [debounceSearchTerm] = useDebounceValue(searchTerm, 300);
 
@@ -52,19 +52,54 @@ function Dashboard() {
     }
   };
 
-  const handleAddTodo = async(title:string) => {
+  const handleAddTodo = async (title: string) => {
     try {
-        const response = await fetch("/api/todos",{
-            method:"POST",
-            headers:{"Content-Type": "application/json"},
-            body: JSON.stringify({title})
-        })
+      const response = await fetch("/api/todos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add todo");
+      }
+      await fetchTodos(currentPage);
     } catch (error) {
-        
+      console.log(error);
     }
-  }
+  };
+
+  const handleUpdateTodo = async (id: string, completed: boolean) => {
+    try {
+      const response = await fetch(`/api/todos/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ completed }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update todo");
+      }
+
+      await fetchTodos(currentPage);
+    } catch (error) {}
+  };
+
+  const handleDeleteTodo = async (id: string) => {
+    const response = await fetch(`/api/todos/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to delete todo");
+    }
+
+    await fetchTodos(currentPage);
+  };
 
   return <div>Dashboard</div>;
 }
+
+//assignment
 
 export default Dashboard;
