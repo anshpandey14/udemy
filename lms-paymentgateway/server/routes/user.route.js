@@ -4,17 +4,26 @@ import {
   authenticateUser,
   createUserAccount,
   getCurrentUserProfile,
+  updateUserProfile,
 } from "../controllers/user.controller.js";
+import { upload } from "../utils/multer.js";
 import { isAuthenticated } from "../middleware/auth.middleware.js";
+import { validateSignUp } from "../middleware/validation.middleware.js";
 
 const router = express.Router();
 
 // auth routes
-router.post("/signup", createUserAc count);
+router.post("/signup", validateSignUp, createUserAccount);
 router.post("/signin", authenticateUser);
 router.post("/signout", signOutUser);
 
 // profile routes
-router.post("/profile", isAuthenticated, getCurrentUserProfile);
+router.get("/profile", isAuthenticated, getCurrentUserProfile);
+router.patch(
+  "/profile",
+  isAuthenticated,
+  upload.single("avatar"),
+  updateUserProfile
+);
 
 export default router;
