@@ -20,6 +20,18 @@ export interface ConfirmationDialogProps {
   setIsOpen: (open: boolean) => void;
 }
 
+/**
+ * Render a modal confirmation dialog with a title, optional description, and Cancel/Confirm actions.
+ *
+ * The dialog's visibility is controlled by `isOpen` and updates are propagated via `setIsOpen`.
+ *
+ * @param confirmLabel - Label for the confirm button (defaults to `"Confirm"`)
+ * @param cancelLabel - Label for the cancel button (defaults to `"Cancel"`)
+ * @param onConfirm - Callback invoked when the confirm button is clicked
+ * @param onCancel - Callback invoked when the cancel button is clicked
+ * @param setIsOpen - Updater called when the dialog open state changes (receives the new open boolean)
+ * @returns A React element representing the confirmation dialog
+ */
 export function ConfirmationDialog({
   isOpen,
   title,

@@ -19,6 +19,14 @@ interface NewFileDialogProps {
   onCreateFile: (filename: string, extension: string) => void;
 }
 
+/**
+ * Render a modal dialog that collects a filename and extension and triggers file creation.
+ *
+ * @param isOpen - Whether the dialog is visible
+ * @param onClose - Callback invoked to request closing the dialog
+ * @param onCreateFile - Callback invoked when the user submits a non-empty filename; receives the trimmed filename and the trimmed extension (defaults to `"js"` when the extension is empty)
+ * @returns The dialog's JSX element
+ */
 function NewFileDialog({ isOpen, onClose, onCreateFile }: NewFileDialogProps) {
   const [filename, setFilename] = React.useState("");
   const [extension, setExtension] = React.useState("js");

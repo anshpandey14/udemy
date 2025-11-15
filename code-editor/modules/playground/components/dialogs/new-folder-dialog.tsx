@@ -19,6 +19,14 @@ interface NewFolderDialogProps {
   onCreateFolder: (folderName: string) => void;
 }
 
+/**
+ * Renders a modal dialog that prompts the user to enter a folder name and create a new folder.
+ *
+ * @param isOpen - Whether the dialog is visible
+ * @param onClose - Callback invoked to request closing the dialog
+ * @param onCreateFolder - Callback invoked with the trimmed folder name when the user submits the form
+ * @returns A JSX element rendering the new-folder creation dialog
+ */
 function NewFolderDialog({
   isOpen,
   onClose,

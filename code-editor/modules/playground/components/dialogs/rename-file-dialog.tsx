@@ -21,6 +21,19 @@ interface RenameFileDialogProps {
   currentExtension: string;
 }
 
+/**
+ * Render a modal dialog that lets the user rename a file's name and extension.
+ *
+ * When opened the dialog initializes its inputs from `currentFilename` and `currentExtension`.
+ * Submitting with a non-empty filename calls `onRename` with the trimmed filename and the trimmed extension (or `currentExtension` if the extension is empty). Cancel closes the dialog via `onClose`.
+ *
+ * @param isOpen - Whether the dialog is open
+ * @param onClose - Callback invoked to close the dialog
+ * @param onRename - Callback invoked with `(filename, extension)` when the form is submitted with a non-empty filename
+ * @param currentFilename - Initial filename to populate the filename input when the dialog opens
+ * @param currentExtension - Initial extension to populate the extension input when the dialog opens
+ * @returns The rendered Rename File dialog element
+ */
 function RenameFileDialog({
   isOpen,
   onClose,

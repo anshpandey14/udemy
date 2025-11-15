@@ -72,6 +72,24 @@ interface TemplateFileTreeProps {
   ) => void;
 }
 
+/**
+ * Render a hierarchical file and folder explorer sidebar with controls to add, rename, and delete items.
+ *
+ * Renders the provided `data` as either a root folder (showing its children) or a single file/folder node, provides UI actions (new file/folder, rename, delete) via dropdowns and dialogs, and forwards user actions to the corresponding callbacks with the item's parent path context.
+ *
+ * @param data - The root folder or single file/folder to display.
+ * @param onFileSelect - Called when a file is selected; receives the selected `TemplateFile`.
+ * @param selectedFile - The currently selected file used to mark the active entry in the UI.
+ * @param title - Sidebar title shown in the header (defaults to "Files Explorer").
+ * @param onAddFile - Called to add a new file; receives the new `TemplateFile` and the parent path string.
+ * @param onAddFolder - Called to add a new folder; receives the new `TemplateFolder` and the parent path string.
+ * @param onDeleteFile - Called to delete a file; receives the `TemplateFile` to delete and its parent path string.
+ * @param onDeleteFolder - Called to delete a folder; receives the `TemplateFolder` to delete and its parent path string.
+ * @param onRenameFile - Called to rename a file; receives the `TemplateFile`, new filename, new extension, and the parent path string.
+ * @param onRenameFolder - Called to rename a folder; receives the `TemplateFolder`, the new folder name, and the parent path string.
+ *
+ * @returns The sidebar element representing the file/folder explorer UI.
+ */
 export function TemplateFileTree({
   data,
   onFileSelect,
@@ -220,6 +238,25 @@ interface TemplateNodeProps {
   ) => void;
 }
 
+/**
+ * Render a single tree node for a template file or folder, including per-item actions and dialogs.
+ *
+ * Renders either a file entry (with rename/delete actions and dialogs) or a collapsible folder (with nested children, new/rename/delete actions and dialogs). The node uses the provided callbacks to propagate create, rename, delete and select operations together with the node's path context.
+ *
+ * @param item - The TemplateFile or TemplateFolder to render as a node.
+ * @param path - The current path for this node; used as the parentPath argument when invoking callbacks. Defaults to "".
+ * @param level - The nesting depth of this node; controls initial collapsed state.
+ * @param selectedFile - The currently selected file; used to mark a file node active.
+ * @param onFileSelect - Called with a TemplateFile when a file node is selected.
+ * @param onAddFile - Called with a new TemplateFile and the parent path when creating a file inside this node.
+ * @param onAddFolder - Called with a new TemplateFolder and the parent path when creating a folder inside this node.
+ * @param onDeleteFile - Called with a TemplateFile and its parent path when a file is deleted.
+ * @param onDeleteFolder - Called with a TemplateFolder and its parent path when a folder is deleted.
+ * @param onRenameFile - Called with a TemplateFile, new filename, new extension, and its parent path when a file is renamed.
+ * @param onRenameFolder - Called with a TemplateFolder, new folder name, and its parent path when a folder is renamed.
+ *
+ * @returns A sidebar menu item representing the file or folder, or `null` if the provided `item` is invalid.
+ */
 function TemplateNode({
   item,
   onFileSelect,
