@@ -68,7 +68,7 @@ const templates: TemplateOption[] = [
     name: "Next.js",
     description:
       "The React framework for production with server-side rendering and static site generation",
-    icon: "/nextjs-icon.svg",
+    icon: "/next.svg",
     color: "#000000",
     popularity: 4,
     tags: ["React", "SSR", "Fullstack"],
