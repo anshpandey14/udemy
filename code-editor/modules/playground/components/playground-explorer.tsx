@@ -324,7 +324,7 @@ function TemplateNode({
           onConfirm={confirmDelete}
           title="Delete File"
           description={
-            'Are you sure you want to delete "{fileName}"? This action cannot be undone.'
+            "Are you sure you want to delete {item}? This action cannot be undone."
           }
           itemName={fileName}
           confirmLabel="Delete"
@@ -485,7 +485,7 @@ function TemplateNode({
           onConfirm={confirmDelete}
           title="Delete Folder"
           description={
-            'Are you sure you want to delete "{folderName}" and all its contents? This action cannot be undone.'
+            "Are you sure you want to delete {item} and all its contents? This action cannot be undone."
           }
           itemName={folderName}
           confirmLabel="Delete"
