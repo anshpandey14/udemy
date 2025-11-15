@@ -132,9 +132,7 @@ export function DashboardSidebar({
                         isActive={pathname === `/playground/${playground.id}`}
                         tooltip={playground.name}
                       >
-                        <Link
-                          href={pathname === `/playground/${playground.id}`}
-                        >
+                        <Link href={`/playground/${playground.id}`}>
                           {IconComponent && (
                             <IconComponent className="h-4 w-4" />
                           )}
@@ -171,9 +169,7 @@ export function DashboardSidebar({
                           isActive={pathname === `playground/${playground.id}`}
                           tooltip={playground.name}
                         >
-                          <Link
-                            href={pathname === `/playground/${playground.id}`}
-                          >
+                          <Link href={`/playground/${playground.id}`}>
                             {IconComponent && (
                               <IconComponent className="h-4 w-4" />
                             )}

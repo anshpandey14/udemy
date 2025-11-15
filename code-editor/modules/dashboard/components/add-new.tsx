@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { createPlayground } from "@/features/playground/actions";
+import { createPlayground } from "@/modules/dashboard/actions";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -71,7 +71,7 @@ const AddNewButton = () => {
           />
         </div>
       </div>
-      // Todo Implement Template Selecting Model here
+      {/* // Todo Implement Template Selecting Model here */}
       <TemplateSelectingModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
