@@ -20,6 +20,17 @@ interface RenameFolderDialogProps {
   currentFolderName: string;
 }
 
+/**
+ * Render a modal dialog that allows renaming an existing folder.
+ *
+ * The dialog initializes and resets its input to `currentFolderName` each time it opens, prevents empty (trimmed) names, and calls `onRename` with the trimmed new name on submit. Calling `onClose` closes the dialog.
+ *
+ * @param isOpen - Whether the dialog is currently open
+ * @param onClose - Callback invoked to close the dialog
+ * @param onRename - Callback invoked with the trimmed new folder name when the form is submitted and the name is non-empty
+ * @param currentFolderName - The initial/current folder name to populate the input
+ * @returns A JSX element rendering the rename-folder dialog
+ */
 function RenameFolderDialog({
   isOpen,
   onClose,
