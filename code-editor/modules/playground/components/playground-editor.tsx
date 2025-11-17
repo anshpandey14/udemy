@@ -26,7 +26,7 @@ const PlaygroundEditor = ({
   const handleEditorDidMount = (editor: any, monaco: Monaco) => {
     editorRef.current = editor;
     monacoRef.current = monaco;
-    console.log("Editor instance ,ounted:", !!editorRef.current);
+    console.log("Editor instance mounted:", !!editorRef.current);
 
     editor.updateOptions({
       ...defaultEditorOptions,
@@ -52,7 +52,7 @@ const PlaygroundEditor = ({
 
   useEffect(() => {
     updateEditorLanguage();
-  }, []);
+  }, [activeFile]);
 
   return (
     <div className="h-full relative">
