@@ -43,7 +43,6 @@ import {
   X,
 } from "lucide-react";
 import { useParams } from "next/navigation";
-import { writeFileSync } from "node:fs";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -380,7 +379,7 @@ const MainPlaygroundPage = () => {
                     <Button
                       size="sm"
                       variant="outline"
-                      onClick={() => handleSave}
+                      onClick={() => handleSave()}
                       disabled={!activeFile || !activeFile.hasUnsavedChanges}
                     >
                       <Save className="h-4 w-4" />
