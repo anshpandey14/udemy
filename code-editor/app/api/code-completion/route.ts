@@ -148,13 +148,11 @@ async function generateSuggestion(prompt: string): Promise<string> {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "codellama:latest",
+        model: "qwen2:0.5b",
         prompt,
         stream: false,
-        options: {
-          temperature: 0.7,
-          max_tokens: 300,
-        },
+        temperature: 0.7,
+        max_tokens: 300,
       }),
     });
 
