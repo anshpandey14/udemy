@@ -10,6 +10,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -25,6 +35,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
+import { AIChatSidePanel } from "@/modules/ai-chat/components/ai-chat-sidepanel";
 
 interface ToggleAIProps {
   isEnabled: boolean;
@@ -184,6 +195,18 @@ const ToggleAI: React.FC<ToggleAIProps> = ({
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+
+      <AIChatSidePanel
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+        onInsertCode={handleInsertCode}
+        onRunCode={handleRunCode}
+        activeFileName={activeFile?.name}
+        activeFileContent={activeFile?.content}
+        activeFileLanguage="TypeScript" // Assuming TypeScript as the language
+        cursorPosition={cursorPosition}
+        theme="dark"
+      />
     </>
   );
 };
