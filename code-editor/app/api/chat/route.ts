@@ -37,20 +37,16 @@ Keep responses concise but comprehensive. Use code blocks with language specific
   try {
     const response = await fetch("http://localhost:11434/api/generate", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "codellama:latest",
+        model: "qwen2:0.5b",
         prompt,
         stream: false,
         options: {
-          temperature: 0.7,
+          temperature: 0.6,
           top_p: 0.9,
-          max_tokens: 1000,
-          num_predict: 1000,
+          max_tokens: 800,
           repeat_penalty: 1.1,
-          context_length: 4096,
         },
       }),
       signal: controller.signal,
@@ -106,12 +102,13 @@ Return only the enhanced prompt, nothing else.`;
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "codellama:latest",
+        model: "qwen2:0.5b",
         prompt: enhancementPrompt,
         stream: false,
         options: {
-          temperature: 0.3,
+          temperature: 0.7,
           max_tokens: 500,
+          top_p: 0.9,
         },
       }),
     });

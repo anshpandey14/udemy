@@ -149,10 +149,13 @@ async function generateSuggestion(prompt: string): Promise<string> {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         model: "qwen2:0.5b",
-        prompt,
+        prompt: prompt,
         stream: false,
-        temperature: 0.7,
-        max_tokens: 300,
+        options: {
+          temperature: 0.7,
+          max_tokens: 500,
+          top_p: 0.9,
+        },
       }),
     });
 
